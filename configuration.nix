@@ -80,6 +80,11 @@
   keepassxc
   ];
 
+  # Enable Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
+
   # X11 support
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
