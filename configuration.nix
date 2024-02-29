@@ -68,7 +68,6 @@
   wget
   neovim
   i3
-  i3status
   sddm
   neofetch
   kitty
@@ -78,6 +77,7 @@
   git
   rofi
   firefox
+  keepassxc
   ];
 
   # X11 support
