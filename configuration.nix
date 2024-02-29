@@ -80,12 +80,14 @@
   keepassxc
   airshipper
   discord
+  flameshot
   ];
 
   # Enable Flatpak
-  services.flatpak.enable = true;
+  xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "gtk";
+  services.flatpak.enable = true;
 
   # X11 support
   services.xserver.enable = true;
