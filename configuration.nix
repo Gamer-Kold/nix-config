@@ -78,6 +78,7 @@
   rofi
   firefox
   keepassxc
+  airshipper
   ];
 
   # Enable Flatpak
