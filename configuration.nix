@@ -77,6 +77,7 @@
   polybar
   git
   rofi
+  firefox
   ];
 
   # X11 support
