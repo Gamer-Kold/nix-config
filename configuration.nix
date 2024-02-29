@@ -92,6 +92,9 @@
   airshipper
   discord
   flameshot
+  alsa-utils
+  helvum
+  pavucontrol
   ];
 
   # Enable Flatpak
