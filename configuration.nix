@@ -79,6 +79,7 @@
   firefox
   keepassxc
   airshipper
+  discord
   ];
 
   # Enable Flatpak
