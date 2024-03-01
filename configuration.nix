@@ -71,6 +71,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -95,6 +96,7 @@
   alsa-utils
   helvum
   pavucontrol
+  stow
   ];
 
   # Enable Flatpak
@@ -103,12 +105,64 @@
   xdg.portal.config.common.default = "gtk";
   services.flatpak.enable = true;
 
+
+
+  # Load nvidia driver for Xorg and Wayland
+
+  # Blacklist noveau
+  # boot.blacklistedKernelModules = ["nouveau"]; 
+
+  hardware.nvidia = {
+
+    # Modesetting is required.
+    modesetting.enable = true;
+
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # of just the bare essentials.
+    powerManagement.enable = false;
+
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of 
+    # supported GPUs is at: 
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Only available from driver 515.43.04+
+    # Currently alpha-quality/buggy, so false is currently the recommended setting.
+    open = false;
+
+    # Enable the Nvidia settings menu,
+	# accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+  };
+  boot.extraModulePackages = [config.boot.kernelPackages.nvidiaPackages.legacy_470];
+  services.xserver.videoDrivers = ["nvidia"];
+
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
   # X11 support
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  hardware.opengl.driSupport32Bit = true;
-  services.xserver.videoDrivers = ["nvidiaLegacy470"];
+
+  # Enabling dynamically linked distros
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged 
+    # programs here, NOT in environment.systemPackages
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -137,4 +191,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  # Flakes
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
