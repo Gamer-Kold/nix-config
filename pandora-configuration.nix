@@ -108,7 +108,6 @@
     slack
     flameshot
     feh
-    aseprite
     nodejs_20
     neovim
     hugo
