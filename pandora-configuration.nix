@@ -111,7 +111,7 @@
     nodejs_20
     neovim
     hugo
-    cinnamon.nemo
+    nemo
     git
     gnumake
     wezterm
@@ -142,7 +142,7 @@
     font-awesome
   ];
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
