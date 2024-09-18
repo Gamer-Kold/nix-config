@@ -112,7 +112,6 @@
     neovim
     hugo
     nemo
-    mongodb
     git
     gnumake
     alacritty
