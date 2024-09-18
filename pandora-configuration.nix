@@ -114,7 +114,7 @@
     nemo
     git
     gnumake
-    wezterm
+    alacritty
     i3
     sddm
     syncthing
