@@ -115,6 +115,7 @@
     git
     gnumake
     alacritty
+    mongodb
     i3
     sddm
     syncthing
