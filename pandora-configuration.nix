@@ -122,7 +122,7 @@
     xdg-utils
     xclip
     fluent-reader
-    transmission
+    transmission_4
     vesktop
     rofi
     stow
