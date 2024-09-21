@@ -123,6 +123,7 @@
     xclip
     fluent-reader
     transmission_4
+    transmission_4-gtk
     vesktop
     rofi
     stow
