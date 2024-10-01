@@ -111,6 +111,7 @@
     git
     gnumake
     alacritty
+    keepassxc
     i3
     sddm
     syncthing
