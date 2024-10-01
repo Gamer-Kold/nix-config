@@ -91,7 +91,7 @@
     glib
     libxkbcommon
     nss
-    nspr4
+    nspr
   ];
 
   # List packages installed in system profile. To search, run:
