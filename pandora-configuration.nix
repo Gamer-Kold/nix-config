@@ -101,16 +101,12 @@
     python3
     foliate
     kanagawa-gtk-theme
-    vscode-langservers-extracted
-    jdt-language-server
     pwvucontrol
-    lxappearance
     slack
     flameshot
     feh
     nodejs_20
     neovim
-    hugo
     nemo
     git
     gnumake
@@ -122,9 +118,10 @@
     xdg-utils
     xclip
     fluent-reader
-    transmission_4
     transmission_4-gtk
     vesktop
+    sl
+    postman
     rofi
     stow
     qemu_full
@@ -136,8 +133,6 @@
     tmux
     unzip
     zip
-    SDL2
-    jdk
   ];
 
   fonts.packages = with pkgs;[
