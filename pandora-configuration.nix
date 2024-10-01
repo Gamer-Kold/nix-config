@@ -90,8 +90,6 @@
     libGL
     glib
     libxkbcommon
-    nss
-    nspr
   ];
 
   # List packages installed in system profile. To search, run:
