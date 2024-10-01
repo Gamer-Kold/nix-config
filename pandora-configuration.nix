@@ -121,7 +121,6 @@
     transmission_4-gtk
     vesktop
     sl
-    postman
     rofi
     stow
     qemu_full
