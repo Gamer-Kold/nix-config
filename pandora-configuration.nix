@@ -98,6 +98,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     lua
+    postman
     python3
     foliate
     kanagawa-gtk-theme
