@@ -91,6 +91,7 @@
     SDL2
     glib
     libxkbcommon
+    vulkan-loader
   ];
 
   # List packages installed in system profile. To search, run:
