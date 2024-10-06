@@ -101,7 +101,6 @@
     hugo
     postman
     python3
-    foliate
     kanagawa-gtk-theme
     pwvucontrol
     slack
