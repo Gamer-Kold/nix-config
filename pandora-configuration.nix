@@ -102,6 +102,7 @@
     hugo
     postman
     python3
+    vulkan-tools
     kanagawa-gtk-theme
     pwvucontrol
     slack
