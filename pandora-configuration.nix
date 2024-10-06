@@ -111,7 +111,7 @@
     feh
     nodejs_20
     neovim
-    nemo
+    nemo-with-extensions
     git
     gnumake
     alacritty
