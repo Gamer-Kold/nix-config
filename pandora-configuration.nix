@@ -88,6 +88,7 @@
     xorg.libXtst
     gtk3
     libGL
+    SDL2
     glib
     libxkbcommon
   ];
